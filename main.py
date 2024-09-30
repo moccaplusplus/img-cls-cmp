@@ -425,8 +425,8 @@ def main(data_path, dataset_name, out_path, show_plot):
     match(dataset_name):
         case 'CatDog':
             evaluate(
-                dataset_name='Cat vs Dog', 
-                data_dir=os.path.join(data_path, 'catdog/animals'),
+                dataset_name='CatDog', 
+                data_dir=os.path.join(data_path, 'cat-vs-dog/animals'),
                 class_names=['cat', 'dog'], 
                 img_width=96, 
                 img_height=96,
@@ -435,7 +435,7 @@ def main(data_path, dataset_name, out_path, show_plot):
         case 'Numbers':
             evaluate(
                 dataset_name='Numbers', 
-                data_dir=os.path.join(data_path, 'numbers/mnist_png/Hnd'),
+                data_dir=os.path.join(data_path, 'numerical-images/mnist_png/Hnd'),
                 class_names=[f'Sample{x}' for x in range(10)], 
                 img_width=28, 
                 img_height=28,
@@ -444,7 +444,7 @@ def main(data_path, dataset_name, out_path, show_plot):
         case 'Cancer':
             evaluate(
                 dataset_name='Cancer', 
-                data_dir=os.path.join(data_path, 'cancer/train'),
+                data_dir=os.path.join(data_path, 'breast-cancer/train'),
                 class_names=['0', '1'], 
                 img_width=120, #320
                 img_height=120, #320
