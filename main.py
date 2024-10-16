@@ -157,7 +157,7 @@ def train_random_forest(x_train, y_train):
         
     """
 
-    model = ensemble.RandomForestClassifier(verbose=True, random_state=SEED)
+    model = ensemble.RandomForestClassifier(n_estimators=100, max_depth=None, verbose=True, random_state=SEED)
     
     model.fit(x_train, y_train)
 
@@ -194,7 +194,7 @@ def train_svm(x_train, y_train):
         
     """
 
-    model = svm.SVC(verbose=True)
+    model = svm.SVC(kernel='rbf', C=1.0, gamma='scale', verbose=True)
 
     model.fit(x_train, y_train)
 
@@ -408,8 +408,6 @@ def main(data_path, dataset_name, out_path, show_plot):
     """
         Glowny entry point projektu. Otrzymuje opcje przekazane z linii komend (lub ich defaultowe wartosci).
         A nastepnie uruchamia urachamia ewaluacje dla wskazanego datasetu.
-
-        Sciezka  
 
         Parameters
         ----------
